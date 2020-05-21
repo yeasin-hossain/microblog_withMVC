@@ -10,9 +10,10 @@
     </div>
     <!-- Login Form -->
     <form action="loginverify" method="POST">
-      <input name="MB_user_name" type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+      <input name="MB_user_name" type="text" id="login" class="fadeIn second" name="login" placeholder="User Name">
       <input name="MB_password" type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
+      <input name="MB_login" type="submit" class="fadeIn fourth" value="Log In">
+
     </form>
 
     <!-- Remind Passowrd -->
