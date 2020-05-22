@@ -3,9 +3,9 @@
 	#
 #	Short View
 #	Jafran Hasan
-	#
-
-class View extends Controller{
+    #
+require_once(ROOT .'views/class/class.config.php');
+    class View extends Controller{
 
     public function login(){
 
@@ -17,16 +17,16 @@ class View extends Controller{
 
     public function home(){
 
-        $data['title'] = 'Welcome to my  website';
+        $data['title'] = 'Micro World';
         $data['page'] = 'home';
         $this->load('layout', $data);
     }
 
-    public function loginverify(){
-
-        $data['css'] = 'loginverify';
-        $data['page'] = './php/loginverify';
-        $this->load('layout', $data);
+    public function signup(){
+        $data['css'] = 'signup';
+        $data['title'] = 'Join With Us';
+        $data['page'] = 'signup';
+        $this->load('layout',$data);
     }
 
 }
