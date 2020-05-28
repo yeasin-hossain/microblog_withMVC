@@ -21,6 +21,7 @@ $routes = [
 
     'home' => 'home',
     'login' => 'login',
+    'logout' => 'logout',
     'signup' => 'signup',
 
 ];

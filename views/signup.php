@@ -1,32 +1,27 @@
 <?php 
 require_once('class/class.user.php');
 
-
 if(isset($_POST['MB_signup'])){
     $user_name = $_POST['MB_user_name'];
     $user_pass = $_POST['MB_password'];
-    $user_pic = '';
     $email = $_POST['MB_user_email'];
-// for uload the photo to dir
     $file = $_FILES['profile_pic'];
-      $up = move_uploaded_file($file['tmp_name'], ROOT .'assets/userdata/' . $file['name']);
-        if($up){
-            $user_pic = $_FILES['profile_pic']['name'];
-        }
 
     $signup = new User();
     $wrn_msg = new Tamplate();
+    $user_pic = $wrn_msg->img_upload($file);
     $qu = $signup->register($user_name,$user_pass,$email,$user_pic);
-    echo $qu;
     if($qu == 1){
         
         header('location: login');
-        exit();
     }else{
-        $wrn_msg->wrn_massage_show();
-       // header('location: signup');
+      //$wrn_msg->wrn_massage('Please Fill Full!','error');
+     // header('location: signup');
+     exit();
     }
 }
+
+
 ?>
 
 

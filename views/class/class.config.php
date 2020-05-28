@@ -1,4 +1,5 @@
 <?php
+session_start();
 class Tamplate {
 
     public function wrn_massage($massage, $msg_type){
@@ -7,6 +8,7 @@ class Tamplate {
     }
 
     public function wrn_massage_show(){
+
         if(isset($_SESSION['msg_wrn'])):?>
             <div class="msg">
                     <!-- this h1 for condition in sweetalert if h1 result 11 then sweealert play -->
@@ -19,6 +21,15 @@ class Tamplate {
             
             </div>
         <?php endif;
+    }
+
+    public function img_upload($file){
+        
+      $up = move_uploaded_file($file['tmp_name'], ROOT .'assets/userdata/' . $file['name']);
+        if($up){
+            $user_pic = $_FILES['profile_pic']['name'];
+            return $user_pic;
+        }
     }
 }
 

@@ -21,29 +21,48 @@ class User{
     $tamplate = new Tamplate();
 
     if(!empty($user_name) && !empty($password) && !empty($profile_pic)){
-      $sql = "INSERT INTO `users` ( `MB_user_name`, `MB_user_email`, `MB_user_pass`, `MB_profile_pic`) VALUES ('$user_name', $email, '$password', '$profile_pic') ";
-        if($result = $db->query($sql)){
+     $view = new View();
+     $query = $view->db->into('users')->insert([
+        'MB_user_name' => $user_name,
+        'MB_user_email' => $email,
+        'MB_user_pass' => $password,
+        'MB_profile_pic' => $profile_pic
+     ]);
+      if($query == 0){
 
-          return true;
-
+        $tamplate->wrn_massage('Maybe You Already Joined With US!','info');
+        return $tamplate->wrn_massage_show();
         }else{
-          return $tamplate->wrn_massage('Maybe You Already Joined With US!','info');
+          return true;
         }
     }else{
-      return $tamplate->wrn_massage('Please Fill Full!','error');
+      $tamplate->wrn_massage('Please Fill Full!','error');
+      return $tamplate->wrn_massage_show();
+      exit();
     }
 
   }
 
 
-  public function loginValide(){
-    $db = $this->db();
-    $sql = "SELECT * FROM users";
-    $result = $db->query($sql);
-    $data = $result->fetch_assoc();
-    echo $data['MB_user_name'];
-  }
+  public function login_user($user_email,$user_pass){
+    $view = new View();
 
+    if(!empty($user_email)&&!empty($user_pass)){
+
+      $query = $view->db->select('*')->from('users')->where(['MB_user_email'=>$user_email,
+      'MB_user_pass'=>$user_pass])->get();
+
+      foreach ($query as $value) {
+        //return $value['MB_user_name'];
+     //   return $value['MB_user_email'];
+      return  $data = ['name'=> $value['MB_user_name'], 'id'=>$value['MB_user_id']];
+
+      }
+    } else{
+      return false;
+    }
+
+  }
 
 }
 
