@@ -7,11 +7,10 @@ $wrn_msg->wrn_massage_show();
 if(isset($_POST['MB_login'])){
   $Login = new User();
   $qu = $Login->login_user($_POST['MB_user_email'],$_POST['MB_password']);
-  echo $qu['name'];
   if(!empty($qu)){
     $_SESSION['user_login'] = true;
-    $_SESSION['user_id'] = $qu['name'];
-    var_dump($qu);
+    $_SESSION['user_name'] = $qu['name'];
+    $_SESSION['user_id'] = $qu['id'];
     header('location: home');
   }else{
     echo 'password or email not match!';

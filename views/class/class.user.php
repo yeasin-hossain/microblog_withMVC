@@ -53,8 +53,7 @@ class User{
       'MB_user_pass'=>$user_pass])->get();
 
       foreach ($query as $value) {
-        //return $value['MB_user_name'];
-     //   return $value['MB_user_email'];
+
       return  $data = ['name'=> $value['MB_user_name'], 'id'=>$value['MB_user_id']];
 
       }
@@ -63,6 +62,26 @@ class User{
     }
 
   }
+
+  public function post_insert($title,$content,$user_id){
+    $post_insert = new View();
+
+    if(!empty($title) && !empty($content)){
+      $insert = $post_insert->db->into('blog')->insert([
+        'blog_title' => $title,
+        'blog_content' => $content,
+        'user_id' => $user_id
+      ]);
+        if($insert != true){
+          return false;
+        }else{
+          return true;
+        }
+
+    } 
+
+  }
+
 
 }
 
