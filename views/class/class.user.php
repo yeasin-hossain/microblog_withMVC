@@ -79,6 +79,13 @@ class User{
         }
 
     } 
+  }
+
+  public function get_post($user_id){
+    $view = new View();
+    $query = $view->db->select('*')->from('blog')->where(['user_id'=> $user_id])->orderby('blog_id')->desc()->get();
+
+    return $query;
 
   }
 

@@ -1,0 +1,14 @@
+
+.uk-card{
+    margin-bottom: 15px;
+}
+
+.uk-card-body{
+    min-height: 150px;
+}
+
+.left-siderbar{
+    position: sticky;
+    top: 100px;
+    z-index: +999;
+}

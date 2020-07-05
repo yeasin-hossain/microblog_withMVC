@@ -30,10 +30,10 @@ class Database {
 
 	public function __construct() {	
 		
-		$dbhost = 'localhost';
-		$dbuser = 'root';
-		$dbpass = '';
-		$dbname = 'microblog';
+		$dbhost = 'blwgc7trp0pjijtqilvu-mysql.services.clever-cloud.com';
+		$dbuser = 'u3zhmix5sim1aj2d';
+		$dbpass = '4cV0HTvOgyCpYLv3COo7';
+		$dbname = 'blwgc7trp0pjijtqilvu';
 		$charset = 'utf8';
 		
 		
