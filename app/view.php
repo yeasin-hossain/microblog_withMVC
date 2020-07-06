@@ -42,5 +42,8 @@ require_once(ROOT .'views/class/class.config.php');
         $this->load('layout',$data);
 
     }
+    public function api(){
+        echo 'HI';
+    }
 
 }

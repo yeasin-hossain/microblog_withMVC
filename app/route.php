@@ -23,6 +23,7 @@ $routes = [
     'login' => 'login',
     'logout' => 'logout',
     'signup' => 'signup',
+    'api' => 'api'
 
 ];
 
