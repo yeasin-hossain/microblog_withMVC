@@ -44,10 +44,25 @@ require_once(ROOT .'views/class/class.config.php');
     }
     public function api(){
         $data = [
-            "name"=>"Shanto",
-            "roll"=>"Shanto",
-            "class"=>"Shanto",
-            "nick"=>"Shanto"
+            
+        "id"=> 2,
+        "trip_id"=> 3,
+        "a1"=> 1,
+        "a2"=> 0,
+        "a3"=> 1,
+        "a4"=> 0,
+        "b1"=> 1,
+        "b2"=> 0,
+        "b3"=> 1,
+        "b4"=> 0,
+        "c1"=> 1,
+        "c2"=> 1,
+        "c3"=> 0,
+        "c4"=> 0,
+        "d1"=> 1,
+        "d2"=> 0,
+        "d3"=> 0,
+        "d4"=> 0
         ];
         echo json_encode($data);
     }
