@@ -43,7 +43,13 @@ require_once(ROOT .'views/class/class.config.php');
 
     }
     public function api(){
-        echo 'HI';
+        $data = [
+            "name"=>"Shanto",
+            "roll"=>"Shanto",
+            "class"=>"Shanto",
+            "nick"=>"Shanto"
+        ];
+        echo json_encode($data);
     }
 
 }
