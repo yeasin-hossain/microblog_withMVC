@@ -7,7 +7,7 @@ class User{
 
   private function Db(){ 
 
-    $db = new mysqli('localhost', 'root', '','microblog');
+    $db = new mysqli('blwgc7trp0pjijtqilvu-mysql.services.clever-cloud.com', 'u3zhmix5sim1aj2d', '4cV0HTvOgyCpYLv3COo7','blwgc7trp0pjijtqilvu');
 
       if($db->connect_error){
         die('Database Issue!');
