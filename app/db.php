@@ -29,11 +29,19 @@ class Database {
 	protected $q_join = false;
 
 	public function __construct() {	
+		//production
 		
-		$dbhost = 'blwgc7trp0pjijtqilvu-mysql.services.clever-cloud.com';
-		$dbuser = 'u3zhmix5sim1aj2d';
-		$dbpass = '4cV0HTvOgyCpYLv3COo7';
-		$dbname = 'blwgc7trp0pjijtqilvu';
+		// $dbhost = 'blwgc7trp0pjijtqilvu-mysql.services.clever-cloud.com';
+		// $dbuser = 'u3zhmix5sim1aj2d';
+		// $dbpass = '4cV0HTvOgyCpYLv3COo7';
+		// $dbname = 'blwgc7trp0pjijtqilvu';
+		// $charset = 'utf8';
+
+		// Development
+		$dbhost = 'localhost';
+		$dbuser = 'root';
+		$dbpass = '';
+		$dbname = 'microblog';
 		$charset = 'utf8';
 		
 		

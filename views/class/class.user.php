@@ -54,7 +54,7 @@ class User{
 
       foreach ($query as $value) {
 
-      return  $data = ['name'=> $value['MB_user_name'], 'id'=>$value['MB_user_id']];
+      return  $data = ['name'=> $value['MB_user_name'], 'id'=>$value['MB_user_id'],'profilePic'=>$value['MB_profile_pic']];
 
       }
     } else{

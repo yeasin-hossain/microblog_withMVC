@@ -11,6 +11,7 @@ if(isset($_POST['MB_login'])){
     $_SESSION['user_login'] = true;
     $_SESSION['user_name'] = $qu['name'];
     $_SESSION['user_id'] = $qu['id'];
+    $_SESSION['profilePic'] = $qu['profilePic'];
     header('location: home');
   }else{
     echo 'password or email not match!';
