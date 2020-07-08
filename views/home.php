@@ -61,7 +61,7 @@ require_once(ROOT . 'views/nav.php');
                 <div class="uk-card-header">
                     <div class="uk-grid-small uk-flex-middle" uk-grid>
                         <div class="uk-width-auto">
-                            <img class="uk-border-circle" width="40" height="40" src="<?= HOME ?>assets/userdata/<?= $_SESSION['profilePic']?>">
+                            <img class="uk-border-circle" width="40" height="40" src="<?= ROOT ?>assets/userdata/<?= $_SESSION['profilePic']?>">
                         </div>
                         <div class="uk-width-expand">
                             <h3 class="uk-card-title uk-margin-remove-bottom"><?= $value['blog_title']; ?></h3>
